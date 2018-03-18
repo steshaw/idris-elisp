@@ -1,0 +1,4 @@
+/.stack-work/
+/examples/*.ibc
+/examples/*.el
+/idris-elisp.cabal

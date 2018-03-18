@@ -1,0 +1,25 @@
+#!/usr/bin/env bash 
+
+set -euo pipefail
+
+#
+# A hack because my railwaycat emacs, which is in the PATH first,
+# doesn't support `--script`.
+#
+if [[ -x /usr/local/bin/emacs ]]; then
+  EMACS=/usr/local/bin/emacs
+elif [[ -x /usr/bin/emacs ]]; then
+  EMACS=/usr/bin/emacs
+else
+  EMACS=emacs
+fi
+
+# Run in the script's directory. i.e. examples/.
+cd $(dirname $0)
+
+echo Old PHP:
+php pythag.el
+echo
+
+echo New ELisp example:
+$EMACS --script example.el

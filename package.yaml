@@ -1,0 +1,25 @@
+name: idris-elisp
+version: 0.0.0.1
+license: ISC
+author: Steven Shaw <steven@steshaw.org>
+maintainer: Steven Shaw <steven@steshaw.org>
+category: Compilers
+
+ghc-options:
+  - -Wall
+
+executables:
+  idris-codegen-elisp:
+    main: Main.hs
+    source-dirs:
+    - src
+
+    dependencies:
+    - idris
+    - base
+    - containers
+    - directory
+    - filepath
+    - haskeline >= 0.7
+    - mtl
+    - transformers

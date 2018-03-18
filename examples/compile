@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+cd $(dirname $0)
+
+stack exec -- idris pythag.idr --codegen elisp -o pythag.el
